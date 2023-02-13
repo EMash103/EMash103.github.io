@@ -60,7 +60,7 @@ th {
 
   <form id="registration-form">
     <label for="name">Name:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="text" id="name" name="name" required>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
@@ -100,13 +100,13 @@ th {
     form.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const username = document.getElementById("name").value;
+      const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       const dob = document.getElementById("dob").value;
       const acceptTerms = document.getElementById("acceptTerms").checked;
 
-      const formData = { username, email, password , dob, acceptTerms};
+      const formData = { name, email, password , dob, acceptTerms};
 
       let data = [];
       if (localStorage.getItem("formData")) {
@@ -126,9 +126,9 @@ th {
       for (const formData of data) {
         const row = document.createElement("tr");
 
-        const usernameCell = document.createElement("td");
-        usernameCell.innerText = formData.name;
-        row.appendChild(usernameCell);
+        const nameCell = document.createElement("td");
+        nameCell.innerText = formData.name;
+        row.appendChild(nameCell);
 
         const emailCell = document.createElement("td");
         emailCell.innerText = formData.email;
